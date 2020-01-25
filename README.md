@@ -6,15 +6,9 @@ Key Features:
 
 More features already planned, but not completed yet.
 
-Contributions will be much appreciated!
+**Contributions will be much appreciated!**
 
 Example:
 
-#include<vector>
-int main()
-{
-    vector<int> numbers = { 9 , 3 , 7 , 5 , 1 };
-    numbers.where( [](num)-> {num>5} );   //numbers: { 9 , 7 }
-}
-
-
+`vector<int> numbers = { 9 , 3 , 7 , 5 , 1 };`
+`numbers.where( [](num)-> {num>5} );   //numbers: { 9 , 7 }`
