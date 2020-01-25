@@ -11,4 +11,5 @@ More features already planned, but not completed yet.
 Example:
 
 `vector<int> numbers = { 9 , 3 , 7 , 5 , 1 };`
+
 `numbers.where( [](num)-> {num>5} );   //numbers: { 9 , 7 }`
