@@ -15,16 +15,16 @@ namespace std
 		template <class G>
 		const vector<T>& where(const G& predicate)
 		{
-			vector<T> matches = vector<T>();
+			_matches = vector<T>();
 
 			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
 			{
 				if (predicate(*iterator))
 				{
-					matches.push_back(*iterator);
+					_matches.push_back(*iterator);
 				}
 			}
-			return matches;
+			return _matches;
 		}
 
 	};
