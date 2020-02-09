@@ -17,13 +17,13 @@ int main()
 
 	vector<int> numbers = vector<int>();
 	numbers.push_back(1);
-	numbers.push_back(2);
+	numbers.push_back(-2);
 	numbers.push_back(3);
-	numbers.push_back(4);
+	numbers.push_back(-4);
 	numbers.push_back(5);
-	numbers.push_back(6);
+	numbers.push_back(-6);
 
-	auto bigNumbers = numbers.where([](int num) {return num > 3; });
-
-
+	
+	auto bigPositive = numbers.where([](int num) {return num > 0; });
+	bigPositive.forEach([](int num) {cout << num << endl; });
 }

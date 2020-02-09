@@ -9,8 +9,15 @@ namespace std
 	class Vector : public std::vector<T>
 	{
 	private:
-		vector<T> _matches;
+		
+		static Vector<T> _matches;
+
 	public:
+
+		Vector<T>()
+		{
+
+		}
 
 		template <class G>
 		const vector<T>& forEach(const G& function)
@@ -23,11 +30,10 @@ namespace std
 			return *this;
 		}
 
-
 		template <class G>
 		const Vector<T>& where(const G& predicate)
 		{
-			_matches = vector<T>();
+			_matches = Vector<T>();
 
 			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
 			{
@@ -36,10 +42,14 @@ namespace std
 					_matches.push_back(*iterator);
 				}
 			}
+
 			return _matches;
 		}
 
 	};
+
+	template <class T>
+	Vector<T> Vector<T>::_matches = Vector<T>();
 }
 
 #define vector Vector
