@@ -10,7 +10,7 @@ namespace std
 	{
 	private:
 		
-		static Vector<T> _matches;
+		//static Vector<T> _matches;
 
 	public:
 
@@ -31,25 +31,23 @@ namespace std
 		}
 
 		template <class G>
-		const Vector<T>& where(const G& predicate)
+		const Vector<T> where(const G& predicate)
 		{
-			_matches = Vector<T>();
+			auto matches = Vector<T>();
 
 			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
 			{
 				if (predicate(*iterator))
 				{
-					_matches.push_back(*iterator);
+					matches.push_back(*iterator);
 				}
 			}
 
-			return _matches;
+			return matches;
 		}
 
 	};
 
-	template <class T>
-	Vector<T> Vector<T>::_matches = Vector<T>();
 }
 
 #define vector Vector
