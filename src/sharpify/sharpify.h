@@ -13,7 +13,19 @@ namespace std
 	public:
 
 		template <class G>
-		const vector<T>& where(const G& predicate)
+		const vector<T>& forEach(const G& function)
+		{
+			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
+			{
+				function(*iterator);
+			}
+
+			return *this;
+		}
+
+
+		template <class G>
+		const Vector<T>& where(const G& predicate)
 		{
 			_matches = vector<T>();
 

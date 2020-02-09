@@ -5,6 +5,7 @@
 
 #include "sharpify.h"
 #include<vector>
+#include<iostream>
 //#include <algorithm>
 using namespace std;
 
@@ -24,9 +25,5 @@ int main()
 
 	auto bigNumbers = numbers.where([](int num) {return num > 3; });
 
-	for (auto num : bigNumbers)
-	{
-
-	}
 
 }
