@@ -24,4 +24,7 @@ int main()
 	int s = numbers.aggregate([](int num, int sum) {return num + sum; });
 	cout << s << endl;
 
+	bool all = numbers.all([](int num) {return num > 0; });
+
+	cout << all << endl;
 }
