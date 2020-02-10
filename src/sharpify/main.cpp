@@ -16,10 +16,12 @@ int main()
 
 
 
-	vector<int> numbers = vector<int>{ 1,-2,3,-4,5,-6 };
+	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
 
-	numbers.where([](int num) {return num > 0; })
+	numbers.where([](int num) {return num > 3; })
 		   .forEach([](int num) {cout << num << endl; });
-
+	       
+	int s = numbers.aggregate([](int num, int sum) {return num + sum; });
+	cout << s << endl;
 
 }

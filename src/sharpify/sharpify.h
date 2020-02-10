@@ -30,6 +30,7 @@ namespace std
 			}
 		}
 
+		//TODO: another C# version should be overloaded.
 		const Vector<T> where(const function<bool(T)>& predicate)const
 		{
 			auto matches = Vector<T>();
@@ -43,6 +44,18 @@ namespace std
 			}
 
 			return matches;
+		}
+
+		const T aggregate(const function<T(T, T)>& function)const
+		{
+			T aggregation = T();
+
+			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
+			{
+				aggregation = function(aggregation, *iterator);
+			}
+
+			return aggregation;
 		}
 
 	};
