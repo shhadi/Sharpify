@@ -25,6 +25,8 @@ int main()
 	cout << s << endl;
 
 	bool all = numbers.all([](int num) {return num > 0; });
-
 	cout << all << endl;
+
+	bool any = numbers.any([](int num) {return num < 0; });
+	cout << any << endl;
 }

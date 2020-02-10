@@ -70,6 +70,18 @@ namespace std
 			return true;
 		}
 
+		bool any(const function<bool(T)>& function)const
+		{
+			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
+			{
+				if (function(*iterator))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
 	};
 
 
