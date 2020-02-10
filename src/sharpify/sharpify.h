@@ -3,6 +3,7 @@
 #include <vector>
 #include<utility>
 #include <functional>
+#include<iostream>
 
 namespace std
 {
@@ -82,6 +83,13 @@ namespace std
 			return false;
 		}
 
+
+		Vector<T> concat(const Vector<T>& second)const
+		{
+			Vector<T> concatenatedSequence = Vector<T>(*this);
+			second.forEach([&concatenatedSequence](T element) { concatenatedSequence.push_back(element); });
+			return concatenatedSequence;
+		}
 	};
 
 

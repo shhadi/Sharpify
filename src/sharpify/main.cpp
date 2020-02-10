@@ -29,4 +29,8 @@ int main()
 
 	bool any = numbers.any([](int num) {return num < 0; });
 	cout << any << endl;
+
+	vector<int> moreNumbers = vector<int>{ 6,7,8,9 };
+	numbers.concat(moreNumbers)
+		   .forEach([](int num) {cout << num << endl; });
 }
