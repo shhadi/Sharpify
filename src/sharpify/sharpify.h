@@ -2,6 +2,7 @@
 #define _SHARPIFY_H_
 #include <vector>
 #include<utility>
+#include <functional>
 
 namespace std
 {
@@ -21,8 +22,7 @@ namespace std
 		{
 		}
 
-		template <class G>
-		void forEach(const G& function)const
+		void forEach(const function<void(T)>& function)const
 		{
 			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
 			{
@@ -30,8 +30,7 @@ namespace std
 			}
 		}
 
-		template <class G>
-		const Vector<T> where(const G& predicate)const
+		const Vector<T> where(const function<bool(T)>& predicate)const
 		{
 			auto matches = Vector<T>();
 
