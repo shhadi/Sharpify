@@ -15,13 +15,8 @@ int main()
 	//numbers.where(NULL);
 
 
-	vector<int> numbers = vector<int>();
-	numbers.push_back(1);
-	numbers.push_back(-2);
-	numbers.push_back(3);
-	numbers.push_back(-4);
-	numbers.push_back(5);
-	numbers.push_back(-6);
+
+	vector<int> numbers = vector<int>{ 1,-2,3,-4,5,-6 };
 
 	
 	auto bigPositive = numbers.where([](int num) {return num > 0; });

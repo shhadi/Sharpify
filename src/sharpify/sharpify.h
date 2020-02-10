@@ -1,6 +1,7 @@
 #ifndef _SHARPIFY_H_
 #define _SHARPIFY_H_
 #include <vector>
+#include<utility>
 //New name for this file should be "sharpify"
 
 namespace std
@@ -14,20 +15,22 @@ namespace std
 
 	public:
 
-		Vector<T>()
+		template<typename... Args>
+		Vector<T>(Args&&...args) : std::vector<T>(std::forward<Args>(args)...)
 		{
+		}
 
+		Vector<T>(initializer_list<T> list):vector<T>(list)
+		{
 		}
 
 		template <class G>
-		const vector<T>& forEach(const G& function)
+		void forEach(const G& function)
 		{
 			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
 			{
 				function(*iterator);
 			}
-
-			return *this;
 		}
 
 		template <class G>
