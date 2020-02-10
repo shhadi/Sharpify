@@ -18,19 +18,34 @@ int main()
 
 	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
 
+	cout << "'Where' example:" << endl;
 	numbers.where([](int num) {return num > 3; })
 		   .forEach([](int num) {cout << num << endl; });
-	       
+	
+	cout << "========================================" << endl;
+
+	cout << "'Aggregate' example:" << endl;
 	int s = numbers.aggregate([](int num, int sum) {return num + sum; });
 	cout << s << endl;
+	
+	cout << "========================================" << endl;
 
+	cout << "'All' example:" << endl;
 	bool all = numbers.all([](int num) {return num > 0; });
 	cout << all << endl;
 
-	bool any = numbers.any([](int num) {return num < 0; });
+	cout << "========================================" << endl;
+
+	cout << "'Any' example:" << endl;
+	bool any = numbers.any([](int num) {return num % 2 == 0; });
 	cout << any << endl;
 
-	vector<int> moreNumbers = vector<int>{ 6,7,8,9 };
-	numbers.concat(moreNumbers)
+	cout << "========================================" << endl;
+
+	cout << "'Concat' example:" << endl;
+	vector<int>{ 6,7,8,9 }
+		   .concat(numbers)
 		   .forEach([](int num) {cout << num << endl; });
+		   
+	cout << "========================================" << endl;
 }
