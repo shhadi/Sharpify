@@ -2,7 +2,6 @@
 #define _SHARPIFY_H_
 #include <vector>
 #include<utility>
-//New name for this file should be "sharpify"
 
 namespace std
 {
@@ -10,8 +9,6 @@ namespace std
 	class Vector : public std::vector<T>
 	{
 	private:
-		
-		//static Vector<T> _matches;
 
 	public:
 
@@ -25,7 +22,7 @@ namespace std
 		}
 
 		template <class G>
-		void forEach(const G& function)
+		void forEach(const G& function)const
 		{
 			for (auto iterator = this->begin(); iterator != this->end(); ++iterator)
 			{
@@ -34,7 +31,7 @@ namespace std
 		}
 
 		template <class G>
-		const Vector<T> where(const G& predicate)
+		const Vector<T> where(const G& predicate)const
 		{
 			auto matches = Vector<T>();
 
@@ -50,6 +47,7 @@ namespace std
 		}
 
 	};
+
 
 }
 
