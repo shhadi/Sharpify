@@ -25,8 +25,8 @@ int main()
 	cout << "========================================" << endl;
 
 	cout << "'Aggregate' example:" << endl;
-	int s = numbers.aggregate([](int num, int sum) {return num + sum; });
-	cout << s << endl;
+	int sum = numbers.aggregate([](int num, int sum) {return num + sum; });
+	cout << sum << endl;
 	
 	cout << "========================================" << endl;
 
@@ -43,9 +43,35 @@ int main()
 	cout << "========================================" << endl;
 
 	cout << "'Concat' example:" << endl;
-	vector<int>{ 6,7,8,9 }
-		   .concat(numbers)
-		   .forEach([](int num) {cout << num << endl; });
-		   
+	vector<int>{ 6, 7, 8, 9 }
+	.concat(numbers)
+		.forEach([](int num) {cout << num << endl; });
+
 	cout << "========================================" << endl;
+
+	cout << "'Contains' example:" << endl;
+	bool contains = vector<int>{ 6, 7, 8, 9 }
+	.contains(8);
+
+	cout << contains << endl;
+
+	cout << "========================================" << endl;
+
+	cout << "'Count' example:" << endl;
+	cout << vector<int>{ 6, 7, 8, 9, 10, 11}.count([](int num) {return num % 2 == 0; }) << endl;
+
+	cout << "========================================" << endl;
+
+	string s = string("shhadi");
+	bool start = s.startsWith("shh");
+	cout << start << endl;
+
+	cout << "========================================" << endl;
+
+	s = string("shhadi");
+	bool end = s.endsWith("di");
+	cout << end << endl;
+
+	cout << "========================================" << endl;
+
 }

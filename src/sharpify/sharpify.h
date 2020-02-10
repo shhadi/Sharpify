@@ -4,9 +4,60 @@
 #include<utility>
 #include <functional>
 #include<iostream>
+#include<string>
 
 namespace std
 {
+	class String :public std::string
+	{
+	private:
+	public:
+		template<typename... Args>
+		String(Args&&...args) : std::string(std::forward<Args>(args)...)
+		{
+		}
+
+		bool startsWith(string s)
+		{
+			if (s.size() > this->size())
+			{
+				return false;
+			}
+			string start = substr(0, s.size());
+			return s == start;
+		}
+
+		bool endsWith(string s)
+		{
+			if (s.size() > this->size())
+			{
+				return false;
+			}
+			string end = substr(size() - s.size(), size());
+			return s == end;
+		}
+
+		//IndexOf('');
+		//Insert(0, "");
+		//PadLeft(5);
+		//PadRight(5);
+		//Remove(0);
+		//Replace('a', 'k');
+		//Split(char[] { 'a', 'b'});
+
+
+		//ToCharArray();
+		//ToLower();
+		//ToUpper();
+		//Trim();
+		//TrimEnd();
+		//TrimStart();
+		//string.IsNullOrEmpty()
+	    //string.IsNullOrWhiteSpace()
+	};
+
+
+
 	template <class T>
 	class Vector : public std::vector<T>
 	{
@@ -90,12 +141,25 @@ namespace std
 			second.forEach([&concatenatedSequence](T element) { concatenatedSequence.push_back(element); });
 			return concatenatedSequence;
 		}
+
+		bool contains(const T& element)const
+		{
+			return this->any([&element](T e) {return e == element; });
+		}
+
+		int count(const function<bool(T)>& function)const
+		{
+			int count = 0;
+			this->forEach([&count,&function](T element) {function(element) ? count++ : count; });
+			return count;
+		}
 	};
 
 
 }
 
 #define vector Vector
+#define string String
 
 #endif
 
