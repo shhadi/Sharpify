@@ -36,11 +36,23 @@ namespace std
 			string end = substr(size() - s.size(), size());
 			return s == end;
 		}
+	
+		string insertAt(int index, char ch)
+		{
+			insert(index, 1, ch);
+			return *this;
+		}
+/*
+		void padLeft(int count)
+		{
 
-		//IndexOf('');
-		//Insert(0, "");
-		//PadLeft(5);
-		//PadRight(5);
+		}
+
+		void padRight(int count)
+		{
+
+		}
+		*/
 		//Remove(0);
 		//Replace('a', 'k');
 		//Split(char[] { 'a', 'b'});
@@ -52,7 +64,7 @@ namespace std
 		//Trim();
 		//TrimEnd();
 		//TrimStart();
-		//string.IsNullOrEmpty()
+		
 	    //string.IsNullOrWhiteSpace()
 	};
 

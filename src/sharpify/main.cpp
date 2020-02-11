@@ -13,8 +13,8 @@ int main()
 {
 	//vector<int> numbers = vector<int>();
 	//numbers.where(NULL);
-
-
+	string shhadi = "shhadi";
+	shhadi.insert(0, 2, ':');
 
 	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
 
