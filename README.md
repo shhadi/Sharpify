@@ -11,15 +11,13 @@ More features already planned, but not completed yet.
 
 Examples:
 
-`
+`#include "sharpify.h"`
 
-#include "sharpify.h"
+`using namespace std;`
 
-using namespace std;
-
-int main()
-{
-	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
+`int main()`
+`{`
+`	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
 
 	cout << "'Where' example:" << endl;
 	numbers.where([](int num) {return num > 3; })
@@ -76,12 +74,6 @@ int main()
 	cout << end << endl;
 
 	cout << "========================================" << endl;
-
-}
-
-
-
-
-
-
 `
+`}`
+
