@@ -36,36 +36,55 @@ namespace std
 			string end = substr(size() - s.size(), size());
 			return s == end;
 		}
-	
-		string insertAt(int index, char ch)
+
+		virtual String insertAt(int index, char ch)
 		{
 			insert(index, 1, ch);
 			return *this;
 		}
-/*
-		void padLeft(int count)
-		{
 
+		String padLeft(int totalLength, char paddingChar)
+		{
+			if (totalLength <= (int)size())
+			{
+				return *this;
+			}
+
+			int paddingCount = totalLength - size();
+			insert(begin(), paddingCount, paddingChar);
+			return *this;
 		}
 
-		void padRight(int count)
+		String padRight(int totalLength, char paddingChar)
 		{
-
+			if (totalLength <= (int)size())
+			{
+				return *this;
+			}
+			int paddingCount = totalLength - size();
+			insert(end(), paddingCount, paddingChar);
+			return *this;
 		}
-		*/
-		//Remove(0);
-		//Replace('a', 'k');
-		//Split(char[] { 'a', 'b'});
 
+		String toLower()
+		{
+			String copy = String(*this);
+			for (int i = 0; i < (int)size(); i++)
+			{
+				copy[i] = tolower((*this)[i]);
+			}
+			return copy;
+		}
 
-		//ToCharArray();
-		//ToLower();
-		//ToUpper();
-		//Trim();
-		//TrimEnd();
-		//TrimStart();
-		
-	    //string.IsNullOrWhiteSpace()
+		String toUpper()
+		{
+			String copy = String(*this);
+			for (int i = 0; i < (int)size(); i++)
+			{
+				copy[i] = toupper((*this)[i]);
+			}
+			return copy;
+		}
 	};
 
 
