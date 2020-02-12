@@ -16,9 +16,12 @@ Examples:
 `using namespace std;`
 
 `int main()`
-`{`
-`	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
+`
+{
 
+
+	vector<int> numbers = vector<int>{ 1,2,3,4,5,6 };
+	
 	cout << "'Where' example:" << endl;
 	numbers.where([](int num) {return num > 3; })
 		   .forEach([](int num) {cout << num << endl; });
