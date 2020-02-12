@@ -13,4 +13,4 @@ Example:
 
 `vector<int> numbers = { -1 , 2 , -5 , -6 , 9 };`
 
-`vector<int> positiveNumbers = numbers.where([](int num) {return num>0; })   //oddNumbers: { 2 , 9 }`
+`vector<int> positiveNumbers = numbers.where([](int num) {return num>0; })         //oddNumbers: { 2 , 9 }`
